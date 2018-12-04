@@ -4,12 +4,14 @@
 // isPrime(17)                         // true
 // isPrime(10000000000000)             // false
 
-function isPrime(num) {
-    for(let i = 0; i > 0; i++) {
-        if(num % i === 0) {
-            return false;
+function isPrime(number) {
+    if (number <= 1 ) {
+        return false;
+    }
+    for (let i = 2; i < number; i++) {
+        if(number % i ) {
+
         }
     }
 }
-isPrime();
-console.log(isPrime());
+isPrime(10);
