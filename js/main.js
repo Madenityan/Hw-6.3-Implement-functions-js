@@ -59,20 +59,23 @@ console.log(fib(1));
 // isSorted([3, 9, -3, 10])            // false
 
 function isSorted(arr) {
-    let sort = arr.sort();
+    let arr2 = arr.slice();
+    arr.sort(function (a, b) {
+        if (a > b) {
+            return 1;
+        }
+        if (a < b) {
+            return -1;
+        }
+        return 0;
+    });
 
     if (arr.length === 0)  {
         return true;
     }
-    if (sort.join() === arr.join()) {
-        return true;
-    }
-    if (sort.join !== arr.join()) {
-        return false;
-    }
-    return true
+    return arr2.join() === arr.join();
 }
-console.log(isSorted([3, 9, -3, 10]));
+console.log(isSorted([-Infinity, -5, 0, 3, 9]));
 
 // 5. // reverse - Reverses the given string (yes, using the built in reverse function is cheating).
 // reverse('')                         // ''
