@@ -58,7 +58,6 @@ console.log(fib(1));
 // isSorted([-Infinity, -5, 0, 3, 9])  // true
 // isSorted([3, 9, -3, 10])            // false
 
-
 function isSorted(arr) {
     let sort = arr.sort();
 
@@ -71,18 +70,27 @@ function isSorted(arr) {
     if (sort.join !== arr.join()) {
         return false;
     }
+    return true
 }
 console.log(isSorted([3, 9, -3, 10]));
 
+// 5. // reverse - Reverses the given string (yes, using the built in reverse function is cheating).
+// reverse('')                         // ''
+// reverse('abcdef')                   // 'fedcba'
 
+function reverse(str) {
+    let reversed = "";
 
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversed += str[i];
+    }
+    return reversed;
+}
+console.log(reverse('abcdef'));
 
-
-
-
-
-
-
+// 6. //indexOf - Implement the indexOf function for arrays.
+// indexOf([1, 2, 3], 1)               // 0
+// indexOf([1, 2, 3], 4)               // -1
 
 
 
