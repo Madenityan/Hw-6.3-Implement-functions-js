@@ -51,22 +51,28 @@ function fib(n) {
     }
     return numberFib;
 }
-console.log(fib(20));
+console.log(fib(1));
 
 // 4. // isSorted - Returns true or false, indicating whether the given array of numbers is sorted.
 // isSorted([])                        // true
 // isSorted([-Infinity, -5, 0, 3, 9])  // true
 // isSorted([3, 9, -3, 10])            // false
 
-let arr = [-Infinity, -5, 0, 3, 9];
-function isSorted() {
+
+function isSorted(arr) {
+    let sort = arr.sort();
+
     if (arr.length === 0)  {
-        return true
+        return true;
     }
-   arr.sort();
-    console.log(arr.sort())
+    if (sort.join() === arr.join()) {
+        return true;
+    }
+    if (sort.join !== arr.join()) {
+        return false;
+    }
 }
-console.log(isSorted());
+console.log(isSorted([3, 9, -3, 10]));
 
 
 
