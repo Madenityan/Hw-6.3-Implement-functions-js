@@ -118,7 +118,7 @@ function isPalindrome(str) {
     // } else {
     //     return false;
     // }
-    // return str === str.split('').reverse().join('');     //not working for isPalindrome('A man a plan a canal Panama')
+    // return str === str.split('').reverse().join('');     //not working for ('A man a plan a canal Panama')
 
     str = str.toLowerCase().replace(/[^а-яa-z1-9]/gi, '');
     let lastIndex = str.length - 1;
@@ -130,6 +130,45 @@ function isPalindrome(str) {
     return true;
 }
 console.log(isPalindrome('A man a plan a canal Panama'));
+
+// 8. // missing - Takes an unsorted array of unique numbers (ie. no repeats) from 1 through some number n, and returns the missing number in the sequence (there are either no missing numbers, or exactly one missing number). Can you do it in O(N) time? Hint: There’s a clever formula you can use.
+// missing([])                         // undefined
+// missing([1, 4, 3])                  // 2
+// missing([2, 3, 4])                  // 1
+// missing([5, 1, 4, 2])               // 3
+// missing([1, 2, 3, 4])               // undefined
+
+function missing(arr) {
+    arr.sort(function(a, b) {
+        return a - b;
+    });
+
+    if (arr.length === 0) {
+        return undefined;
+    }
+
+    for (let i = 1; i <= arr.length; i++) {
+        if (i !== arr[i - 1]) {
+            return i;
+        }
+    }
+    return undefined;
+}
+console.log(missing([1, 2, 3, 4]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
