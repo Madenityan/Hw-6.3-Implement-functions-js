@@ -156,22 +156,27 @@ function missing(arr) {
 }
 console.log(missing([1, 2, 3, 4]));
 
+// 9. // isBalanced - Takes a string and returns true or false indicating whether its curly braces are balanced.
+// isBalanced('}{')                      // false
+// isBalanced('{{}')                     // false
+// isBalanced('{}{}')                    // false
+// isBalanced('foo { bar { baz } boo }') // true
+// isBalanced('foo { bar { baz }')       // false
+// isBalanced('foo { bar } }')           // false
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function isBalanced(string) {
+    let count = 0;
+    for(let letter of string) {
+        if (letter === '{') {
+            count++
+        }
+        if (letter === '}') {
+            count--;
+            if (count < 0) {
+                return false
+            }
+        }
+    }
+    return count === 0
+}
+console.log(isBalanced('foo { bar { baz }'));
