@@ -89,15 +89,28 @@ function reverse(str) {
     }
     return reversed;
 }
-console.log(reverse(''));
+console.log(reverse('fedcba'));
 
 // 6. //indexOf - Implement the indexOf function for arrays.
 // indexOf([1, 2, 3], 1)               // 0
 // indexOf([1, 2, 3], 4)               // -1
 
+function indexOf(arr, numb) {
+   for (let i = 0; i < arr.length; i++) {
+       if(arr[i]===numb) {
+           return i;
+       }
+   }
+    return -1;
+}
+console.log(indexOf([1, 2, 3], 4));
 
-
-
+//
+// 7. // isPalindrome - Return true or false indicating whether the given string is a plaindrone (case and space insensitive).
+// isPalindrome('')                                // true
+// isPalindrome('abcdcba')                         // true
+// isPalindrome('abcd')                            // false
+// isPalindrome('A man a plan a canal Panama')     // true
 
 
 
