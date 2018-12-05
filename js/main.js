@@ -112,6 +112,16 @@ console.log(indexOf([1, 2, 3], 4));
 // isPalindrome('abcd')                            // false
 // isPalindrome('A man a plan a canal Panama')     // true
 
+function isPalindrome(str) {
+    // if(str === str.split('').reverse().join('')) {
+    //     return true
+    // } else {
+    //     return false;
+    // }
+
+    return str === str.split('').reverse().join('');
+}
+console.log(isPalindrome('abcdcba'));
 
 
 
