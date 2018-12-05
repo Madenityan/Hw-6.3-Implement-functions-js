@@ -118,10 +118,18 @@ function isPalindrome(str) {
     // } else {
     //     return false;
     // }
+    // return str === str.split('').reverse().join('');     //not working for isPalindrome('A man a plan a canal Panama')
 
-    return str === str.split('').reverse().join('');
+    str = str.toLowerCase().replace(/[^а-яa-z1-9]/gi, '');
+    let lastIndex = str.length - 1;
+    for (let i = 0; i < str.length / 2; i++) {
+        if (str[i] !== str[lastIndex - i]) {
+            return false;
+        }
+    }
+    return true;
 }
-console.log(isPalindrome('abcdcba'));
+console.log(isPalindrome('A man a plan a canal Panama'));
 
 
 
